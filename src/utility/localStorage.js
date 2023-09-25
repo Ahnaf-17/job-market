@@ -1,4 +1,4 @@
-import { stringify } from "postcss";
+// import { stringify } from "postcss";
 
 const getStoredJobApplication = () =>{
     const storedJobApplication = localStorage.getItem('job-applications');
@@ -13,7 +13,7 @@ const saveJobApplication = id =>{
     const exists = storedJobApplications.find(jobId =>jobId === id);
     if(!exists){
         storedJobApplications.push(id);
-        localStorage.setItem('job-applications' , stringify(storedJobApplications))
+        localStorage.setItem('job-applications', JSON.stringify(storedJobApplications))
     }
 }
  export {saveJobApplication ,getStoredJobApplication}

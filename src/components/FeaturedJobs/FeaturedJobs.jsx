@@ -3,9 +3,9 @@ import Job from "../Job/Job";
 
 const FeaturedJobs = () => {
 
-    const [jobs, setJobs] = useState([ ]);
+    const [jobs, setJobs] = useState([]);
 
-    const [dataLength , setDatalength] =useState(4)
+    const [dataLength , setDataLength] =useState(4)
 
     useEffect(()=>{
         fetch('jobs.json')
@@ -23,7 +23,8 @@ const FeaturedJobs = () => {
                 }
             </div>
             <div className={dataLength === jobs.length && 'hidden'}>
-                <button onClick={() => setDatalength(jobs.length)} className="btn btn-primary">Show All Jobs</button>
+                <button onClick={() => setDataLength(jobs.length)} 
+                className="btn btn-primary">Show All Jobs</button>
             </div>
         </div>
     );
